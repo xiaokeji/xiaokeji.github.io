@@ -1,0 +1,1 @@
+[{"__type__":"cc.SpriteFrame","content":{"name":"bird1","texture":"8f0WWhmVNJVbATNnGxMh+q","rect":[289,950,86,60],"offset":[0,0],"originalSize":[86,60]}},{"__type__":"cc.AnimationClip","_name":"birdWing","_duration":0.016666666666666666,"speed":2,"wrapMode":2,"curveData":{"comps":{"cc.Sprite":{"spriteFrame":[{"frame":0,"value":{"__uuid__":"5fHCoKQCJB2JP7WIsuCMT8"}}]}}}}]
