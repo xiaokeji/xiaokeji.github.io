@@ -294,35 +294,43 @@ hr {
           
       })
     }
-    var queryor = new AV.Query('dataBase');
-    var queryor2 = new AV.Query('dataBase');
-    queryor2.greaterThanOrEqualTo('score',hade.left);
-    queryor.equalTo('hard',hard.hard);
-    var queryre = AV.Query.and(query,queryor);
-    queryre.count().then(function (count) {
-      hade.right=count;
-    }, function (error) {
-    });
-    var list = new AV.Query('dataBase');
-    list.equalTo('hard',hard.hard);
-    list.addDescending('score');
-    list.limit(30);
-    list.find().then(function (results) {
-        console.log(results);
-        for(var i=0;i<results.length;i++){
-          var D = results[i].createdAt
-          var itema = {
-            name: results[i].attributes.name,
-            score: results[i].attributes.score?results[i].attributes.score:0,
-            massage: results[i].attributes.massage,
-            crateAt: D.toLocaleDateString()+' '+D.toLocaleTimeString()
+
+  </script>
+  <script>
+    var yourFunction = function(){
+      var queryor = new AV.Query('dataBase');
+      var queryor2 = new AV.Query('dataBase');
+      queryor2.greaterThanOrEqualTo('score',hade.left);
+      queryor.equalTo('hard',hard.hard);
+      var queryre = AV.Query.and(queryor2,queryor);
+      queryre.count().then(function (count) {
+        hade.right=count;
+      }, function (error) {
+      });
+      var addreddd = new AV.Query('dataBase');
+      addreddd.addDescending('score');
+      addreddd.equalTo('hard',hard.hard);
+      //list.limit(30);
+      //list.descending('score');
+      addreddd.find().then(function (results) {
+          console.log(results);
+          for(var i=0;i<results.length;i++){
+            var D = results[i].createdAt
+            var itema = {
+              name: results[i].attributes.name,
+              score: results[i].attributes.score?results[i].attributes.score:0,
+              massage: results[i].attributes.massage,
+              crateAt: D.toLocaleDateString()+' '+D.toLocaleTimeString()
+            }
+            console.log(itema.crateAt);
+            listt.items.push(itema);
           }
-          console.log(itema.crateAt);
-          listt.items.push(itema);
-        }
-    }, function (error) {
-    })
+      }, function (error) {
+      })
     
+    }
+    setTimeout('yourFunction()',200); 
+
 </script>
 
 </html>
